@@ -36,7 +36,7 @@ import static android.util.Log.WARN;
 
 class HTTPRequest implements Callback {
 
-  private static OkHttpClient mClient = new OkHttpClient.Builder().dispatcher(getDispatcher()).build();
+  private static OkHttpClient mClient = new OkHttpClient.Builder().dispatcher(getDispatcher()).addInterceptor(new GzipInterceptor()).build();
   private static boolean logEnabled = true;
   private static boolean logRequestUrl = false;
 
